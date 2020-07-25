@@ -32,7 +32,7 @@ namespace CsharpSourcer.Parsers
             return Either.Create<ParsingException>.Right(new PartialParse<string>(match.Value, input.Substring(match.Index + match.Length)));
         }
 
-        protected override string GetRepresentation(HashSet<string> alreadyPrinted) => $@"{{""regex"": ""{m_regex}""";
+        public override string GetRepresentation(HashSet<Guid> alreadyPrinted) => $@"{{""regex"": ""{m_regex}""";
     }
 
     public class LiteralParser : Parser<string>, StringParser
@@ -49,6 +49,6 @@ namespace CsharpSourcer.Parsers
                 ? Either.Create<ParsingException>.Right(new PartialParse<string>(m_literal, input.Substring(m_literal.Length)))
                 : Either.Create<IPartialParse<string>>.Left<ParsingException>(ParsingFailure(input));
 
-        protected override string GetRepresentation(HashSet<string> alreadyPrinted) => $@"{{""literal"": ""{m_literal}""";
+        public override string GetRepresentation(HashSet<Guid> alreadyPrinted) => $@"{{""literal"": ""{m_literal}""";
     }
 }

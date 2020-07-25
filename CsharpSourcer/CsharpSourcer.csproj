@@ -6,12 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Old\**" />
-    <EmbeddedResource Remove="Old\**" />
-    <None Remove="Old\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
       <_Parameter1>CsharpSourcer.Tests</_Parameter1>
     </AssemblyAttribute>
